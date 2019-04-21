@@ -1,0 +1,56 @@
+<!-- The socialPosts component is the parent component.
+i. It owns the list of posts.
+ii. Its template contains the ngForOf for posts and the “New Post” button.
+iii. The other two components are created inside of its template.
+iv. has an onSubmit method that responds to the submitted event -->
+
+<body [ngClass]="{flexing: isflexElem}" style="margin: auto;">
+  <h1 style="text-align:center; background-color: lightgray; margin: none; border: none; padding: none;">
+    {{ title }}
+  </h1>
+  <p [ngClass]="{componentMargins: isMargin, componentWidths: isWide, flexing: isflexElem}">
+    <button name="newPostBtn" style="background-color: white; color: black; align-content: center; border: 1px solid; 
+    border-radius: 4px;" [ngClass]="{padded: isPadded, widths: isWidths}" (click)="toggleMain()">New Thought</button>
+  </p>
+       
+  <form [ngClass]="{componentMargins: isMargin, rounded: isRounded, padded: isPadded, componentWidths: isWide, flexing: isflexElem}">
+    <div id="listTasks" style="list-style: none; padding: 3% 0 7%;"  [ngClass]="{flexing: isflexElem}" >
+      <div name="entireList"  id="li-Item" *ngFor="let thing of filteredTask; let i = index" [ngClass]="{flexing: isflexElem}" style="display: inline-flex; padding: 1% 0 2%;" >
+        <div>
+          <h4 style="padding-left: 4%; margin: 0 auto .2em; ">
+            {{ thing.itemTitle }}
+          </h4>
+        </div>
+        <div [ngClass]="{flexrow: isflexRow}"> 
+          <div name="indivTask" [ngClass]="{flexing: isflexElem}" aria-rowspan='5' style="width: 48em; padding-left: 4%; "> 
+            {{ thing.item }} 
+          </div>
+        <div>
+          <button name="deleteBtn" (click)="delPost(i)" style="background-color: white; border: none;">
+            <i class="glyphicon glyphicon-remove"></i>
+          </button>
+        </div>
+      </div>
+      <p style='width: 37.75em; height: .1em; display: flex; margin: .5em 0 auto 1.3em; border-bottom: 1px solid grey;'></p>
+      </div>
+    </div>        
+  </form>
+
+  <form name="postBoxShow" *ngIf="main" action="" style="background-color: lightblue; width: 60%; padding:3% 6% 1%" [ngClass]="{componentMargins: isMargin, rounded: isRounded, padded: isPadded, flexing: isflexElem}">
+        <h5>Title</h5>
+      <p>
+        <input name="addTitle" type="text" placeholder="Post title" [(ngModel)]="titleInput" [ngClass]="{rounded: isRounded, padded: isPadded, widths: isWidths, flexing: isflexElem}" />
+      </p>
+        <h5>Thought</h5>
+      <p>
+        <input name="addTodo" type="text" [(ngModel)]="postInput" style="height: 200px;" [ngClass]="{rounded: isRounded, padded: isPadded, widths: isWidths, flexing: isflexElem}" />
+      </p> 
+
+      <p style="margin-top: 3%;">
+        <button name="newPostBtn" style="background-color: white; color: black; align-content: center; border: 1px solid; " [ngClass]="{rounded: isRounded, padded: isPadded, widths: isWidths}" (click)="submitted()">Add Post</button>
+      </p>
+  </form>
+  <form *ngIf="!main"></form>
+</body>
+
+<!-- [ngStyle]="{'font-style': styleExp}" -->
