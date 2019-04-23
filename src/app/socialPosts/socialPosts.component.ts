@@ -21,12 +21,10 @@ export class SocialPostsComponent {
     @Input() main: boolean;
   
     isRounded: boolean = true;
-    isPink: boolean = true; 
     isPadded: boolean = true; 
     isWidths: boolean = true; 
     isflexElem: boolean = true;
     isflexRow: boolean = true;
-    isStrike: boolean = false;
     isWide: boolean = true;
     isMargin: boolean = true;
 
@@ -39,37 +37,21 @@ export class SocialPostsComponent {
 
 onSubmitEvent(eventArgs){
   console.log("APP COMPONENT: On Submit event fired", eventArgs);
-
-      this.postList.push(eventArgs);
+  this.postList.push(eventArgs);
 } 
   
   isCompleted: boolean = false;
   isDeleted: boolean =  false;
   
   classList: Object = {
-  pink: this.isPink,
   round: this.isRounded,
   padding: this.isPadded,
   widths: this.isWidths,
   flexing: this.isflexElem,
   flexrow: this.isflexRow,
-  strike: this.isStrike,
   componentWidths: this.isWide,
   componentMargins: this.isMargin
   };
-  
-  // submitted = () => {
-  //     const newPost = {
-  //       itemTitle: this.titleInput,
-  //       item: this.postInput,
-  //       completed: this.isCompleted,
-  //       delete: this.isDeleted
-  //     };
-  //     this.postList.push(newPost);
-  //     this.postInput = null;
-  //     this.titleInput = null;
-  //     this.filter(this.searchPost);
-  //  }
   
   toggleMain = () => {
     this.main = !this.main;

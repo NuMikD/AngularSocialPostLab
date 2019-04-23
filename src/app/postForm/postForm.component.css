@@ -12,28 +12,32 @@
 .widths {
     width: 100%;
 }
+
 input:focus {
-    width: 70%;
+    width: 105%;
+    font-size: 125%;
     outline: none;
    }
  
  input {
-    -webkit-transition: all 0.7s ease 0s;
-    -moz-transition: all 0.7s ease 0s;
-    -o-transition: all 0.7s ease 0s;
-    transition: all 0.7s ease 0s;
+    -webkit-transition: all 0.2s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
    }
  
  
  textarea:focus {
-    height: 150px;
+    height: 200px;
+    width: 105%;
+    font-size: 125%;
     outline: none;
    }
  
    textarea {
-    -webkit-transition: all 0.7s ease 0s;
-    -moz-transition: all 0.7s ease 0s;
-    -o-transition: all 0.7s ease 0s;
-    transition: all 0.7s ease 0s;
+    -webkit-transition: all 0.2s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
  
    }

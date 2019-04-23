@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 interface Post{
 itemTitle: string;
@@ -11,7 +11,15 @@ item: string;
   styleUrls: ['./post.component.css']
 })
 export class PostComponent {
-@Input() post:Post;
+
+postInput: string;
+titleInput: string;
+
+@Input() post: Post;
+@Output() delete = new EventEmitter<any>();
+// removePost = () => {
+// this.delete.emit(this.post);
+// }
 
 isRounded: boolean = true;
 isPadded: boolean = true; 
@@ -21,6 +29,7 @@ isflexRow: boolean = true;
 isStrike: boolean = false;
 isWide: boolean = true;
 isMargin: boolean = true;
+// delete: boolean = null;
 
 classList: Object = {
   round: this.isRounded,
@@ -32,4 +41,10 @@ classList: Object = {
   componentWidths: this.isWide,
   componentMargins: this.isMargin
  };
+
+//  delPost = (i) => {
+//     console.log(i)
+//     this.post.splice(i, 1);
+//     }
+    
 };
