@@ -1,4 +1,32 @@
-/* .flexing {
+
+
+form {
+    /* margin: auto; */
+    background-color: white;
+    border-radius: 2px;
+}
+
+.componentWidths {
+    margin: auto;
+    width: 80%;
+}
+
+.rounded {
+    border-style: solid;
+    border-radius: 4px;
+    border-color: black;
+    border-width: 1px;
+}
+
+.padded {
+    padding: 1%;
+}
+
+.widths {
+    width: 100%;
+}
+
+.flexing {
     display: flex;
     flex-direction: column;
 }
@@ -6,4 +34,14 @@
 .flexrow {
     display: flex;
     flex-direction: row;
-} */
+}
+
+.strike {
+    text-decoration: line-through;
+    color: black;
+
+}
+
+.componentMargins {
+    margin: 1.5% auto;
+}

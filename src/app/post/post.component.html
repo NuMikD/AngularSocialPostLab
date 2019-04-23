@@ -1,6 +1,8 @@
 <!-- The post component displays a single post in the list.
 i. It has one input binding called post. -->
-<!-- 
+<form [ngClass]="{componentMargins: isMargin, rounded: isRounded, padded: isPadded, componentWidths: isWide, flexing: isflexElem}">
+<div id="listTasks" style="list-style: none; padding: 3% 0 7%;"  [ngClass]="{flexing: isflexElem}" >
+<div name="allPost"  id="li-Item" *ngFor="let thing of filteredPost; let i = index" [ngClass]="{flexing: isflexElem}" style="display: inline-flex; padding: 1% 0 2%;" >
 <div>
   <h4 style="padding-left: 4%; margin: 0 auto .2em; ">
     {{ thing.itemTitle }}
@@ -17,5 +19,15 @@ i. It has one input binding called post. -->
   </div>
 </div>
 <p style='width: 37.75em; height: .1em; display: flex; margin: .5em 0 auto 1.3em; border-bottom: 1px solid grey;'></p>
-     -->
+</div>
+</div>        
+</form>
+
+<!-- <div class="postDiv">
+        <p class="titleStyle">{{post.title}}</p>
+        <div class="bodyDiv">
+            <p>{{post.body}}</p>
+            <button class="closeBtn" (click)="removePost()"><i class="material-icons">clear</i></button>
+        </div>
+</div> -->
   

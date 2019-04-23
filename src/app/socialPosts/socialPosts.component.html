@@ -15,7 +15,7 @@ iv. has an onSubmit method that responds to the submitted event -->
        
   <form [ngClass]="{componentMargins: isMargin, rounded: isRounded, padded: isPadded, componentWidths: isWide, flexing: isflexElem}">
     <div id="listTasks" style="list-style: none; padding: 3% 0 7%;"  [ngClass]="{flexing: isflexElem}" >
-      <div name="entireList"  id="li-Item" *ngFor="let thing of filteredTask; let i = index" [ngClass]="{flexing: isflexElem}" style="display: inline-flex; padding: 1% 0 2%;" >
+      <div name="allPost"  id="li-Item" *ngFor="let thing of postList; let i = index" [ngClass]="{flexing: isflexElem}" style="display: inline-flex; padding: 1% 0 2%;" >
         <div>
           <h4 style="padding-left: 4%; margin: 0 auto .2em; ">
             {{ thing.itemTitle }}
@@ -37,20 +37,9 @@ iv. has an onSubmit method that responds to the submitted event -->
   </form>
 
   <form name="postBoxShow" *ngIf="main" action="" style="background-color: lightblue; width: 60%; padding:3% 6% 1%" [ngClass]="{componentMargins: isMargin, rounded: isRounded, padded: isPadded, flexing: isflexElem}">
-        <h5>Title</h5>
-      <p>
-        <input name="addTitle" type="text" placeholder="Post title" [(ngModel)]="titleInput" [ngClass]="{rounded: isRounded, padded: isPadded, widths: isWidths, flexing: isflexElem}" />
-      </p>
-        <h5>Thought</h5>
-      <p>
-        <input name="addTodo" type="text" [(ngModel)]="postInput" style="height: 200px;" [ngClass]="{rounded: isRounded, padded: isPadded, widths: isWidths, flexing: isflexElem}" />
-      </p> 
-
-      <p style="margin-top: 3%;">
-        <button name="newPostBtn" style="background-color: white; color: black; align-content: center; border: 1px solid; " [ngClass]="{rounded: isRounded, padded: isPadded, widths: isWidths}" (click)="submitted()">Add Post</button>
-      </p>
+      
+    <postForm (submitted)="onSubmitEvent($event)"></postForm>
+  
   </form>
   <form *ngIf="!main"></form>
 </body>
-
-<!-- [ngStyle]="{'font-style': styleExp}" -->

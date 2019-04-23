@@ -1,7 +1,6 @@
-
 import { Component, Input } from '@angular/core';
-
-interface Task {
+// import { SubmittedEventArgs } from '../postForm/postForm.component';
+interface Post {
     itemTitle: string;
     item: string;
     // completed: boolean;
@@ -18,7 +17,6 @@ export class SocialPostsComponent {
     postInput: string;
     titleInput: string;
     searchPost: string;
-    // completed: boolean=false;
     delete: null;
     @Input() main: boolean;
   
@@ -31,12 +29,19 @@ export class SocialPostsComponent {
     isStrike: boolean = false;
     isWide: boolean = true;
     isMargin: boolean = true;
-  
-    postList: Task[] = [
+
+    oldpost = {itemTitle: 'Love', item: 'Love is what love does, love is lauren'}
+    postList: Post[] = [
+      this.oldpost,
       {itemTitle: 'New', item: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac turpis egestas integer eget aliquet nibh praesent tristique magna. Commodo odio. '}, //completed: false
       {itemTitle: 'old', item: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac turpis egestas integer eget aliquet nibh praesent tristique magna. Commodo odio. '}  //completed: false
     ];
-  filteredTask = [...this.postList];
+
+onSubmitEvent(eventArgs){
+  console.log("APP COMPONENT: On Submit event fired", eventArgs);
+
+      this.postList.push(eventArgs);
+} 
   
   isCompleted: boolean = false;
   isDeleted: boolean =  false;
@@ -53,41 +58,27 @@ export class SocialPostsComponent {
   componentMargins: this.isMargin
   };
   
-  submitted = () => {
-      const newPost = {
-        itemTitle: this.titleInput,
-        item: this.postInput,
-        completed: this.isCompleted,
-        delete: this.isDeleted
-      };
-      this.postList.push(newPost);
-      this.postInput = null;
-      this.titleInput = null;
-      this.filter(this.searchPost);
-   }
+  // submitted = () => {
+  //     const newPost = {
+  //       itemTitle: this.titleInput,
+  //       item: this.postInput,
+  //       completed: this.isCompleted,
+  //       delete: this.isDeleted
+  //     };
+  //     this.postList.push(newPost);
+  //     this.postInput = null;
+  //     this.titleInput = null;
+  //     this.filter(this.searchPost);
+  //  }
   
   toggleMain = () => {
     this.main = !this.main;
  };
 
-  // completeTask = (i: number)=>{
-  //     this.postList[i]['completed'] = !this.postList[i]['completed'];
-  // }
-  
-  // undoComplete = (i) => {
-  //   if(this.postList[i]['completed'] === true){
-  //     this.postList[i]['completed'] = !this.postList[i]['completed'];
-  //   }
-  // }
-  
-  filter = (searchPost: string) => {
-    const searchString = searchPost ? searchPost.toLowerCase() : '';
-    this.filteredTask = this.postList.filter(i => i.item.toLowerCase().includes(searchString));
-  }
   
   delPost = (i) => {
+    console.log(i)
     this.postList.splice(i, 1);
-    this.filter(this.searchPost)
     }
     
   }
