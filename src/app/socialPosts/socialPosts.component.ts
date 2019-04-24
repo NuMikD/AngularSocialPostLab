@@ -1,5 +1,4 @@
 import { Component, Input, Output } from '@angular/core';
-import { Posting } from '../post/post.component';
 
 interface Post {
     itemTitle: string;

@@ -1,33 +1,19 @@
 <!-- The post component displays a single post in the list.
 i. It has one input binding called post. -->
 
-<!-- <div name="allPost"  id="li-Item" *ngFor="let thing of postList; let i = index" [ngClass]="{flexing: isflexElem}" style="display: inline-flex; padding: 1% 0 2%;" > -->
-
- <div>
-  <h4 style="padding-left: 4%; margin: 0 auto .2em; ">
+<div>
+  <h4>
     {{ postList.itemTitle }}
   </h4>
 </div>
 <div [ngClass]="{flexrow: isflexRow}"> 
-  <div name="indivTask" [ngClass]="{flexing: isflexElem}" aria-rowspan='5' style="width: 48em; padding-left: 4%; "> 
+  <div id="indivTask" [ngClass]="{flexing: isflexElem}"> 
     {{ postList.item }} 
   </div>
-   
-
-    <button name="deleteBtn" (click)="erasePost()" style="background-color: white; border: none;">
+    <button name="deleteBtn" (click)="erasePost()">
       <i class="glyphicon glyphicon-remove"></i>
     </button>
-
 </div>
-<p style='width: 37.75em; height: .1em; display: flex; margin: .5em 0 auto 1.3em; border-bottom: 1px solid grey;'></p>
+  <p></p>
 
-<!-- </div> -->
-
-<!-- <div class="postDiv">
-        <p class="titleStyle">{{post.title}}</p>
-        <div class="bodyDiv">
-            <p>{{post.body}}</p>
-            <button class="closeBtn" (click)="removePost()"><i class="material-icons">clear</i></button>
-        </div>
-</div> -->
   

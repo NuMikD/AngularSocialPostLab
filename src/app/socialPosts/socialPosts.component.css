@@ -1,9 +1,24 @@
-
-
 form {
-    /* margin: auto; */
     background-color: white;
     border-radius: 2px;
+}
+
+h1 {
+    font-size: 3.5vw; 
+    font-family: cursive;
+    text-align: center; 
+    background-color: lightgray; 
+    margin: none; 
+    border: none; 
+    padding: none;
+}
+
+button {
+    background-color: white;
+    color: black; 
+    align-content: center; 
+    border: 1px solid; 
+    border-radius: 4px;
 }
 
 .componentWidths {
@@ -16,6 +31,17 @@ form {
     border-radius: 4px;
     border-color: black;
     border-width: 1px;
+}
+
+#listTask {
+    list-style: none; 
+    padding: 3% 0 7%;
+}
+
+#postBoxShow {
+    background-color: lightblue; 
+    width: 60%; 
+    padding:3% 6% 1%;
 }
 
 .padded {
@@ -34,12 +60,6 @@ form {
 .flexrow {
     display: flex;
     flex-direction: row;
-}
-
-.strike {
-    text-decoration: line-through;
-    color: black;
-
 }
 
 .componentMargins {

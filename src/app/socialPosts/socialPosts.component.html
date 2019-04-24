@@ -5,15 +5,14 @@ iii. The other two components are created inside of its template.
 iv. has an onSubmit method that responds to the submitted event -->
 
 <body [ngClass]="{flexing: isflexElem}" style="margin: auto;">
-  <h1 style="text-align:center; background-color: lightgray; margin: none; border: none; padding: none;">
+  <h1>
     {{ title | titlecase }}
   </h1>
   <p [ngClass]="{componentMargins: isMargin, componentWidths: isWide, flexing: isflexElem}">
-    <button name="newPostBtn" style="background-color: white; color: black; align-content: center; border: 1px solid; 
-    border-radius: 4px;" [ngClass]="{padded: isPadded, widths: isWidths}" (click)="toggleForm()">New Thought</button>
+    <button name="newPostBtn"  [ngClass]="{padded: isPadded, widths: isWidths}" (click)="toggleForm()">New Thought</button>
   </p>       
   <form [ngClass]="{componentMargins: isMargin, rounded: isRounded, padded: isPadded, componentWidths: isWide, flexing: isflexElem}">
-    <div id="listTasks" style="list-style: none; padding: 3% 0 7%;"  [ngClass]="{flexing: isflexElem}" >            
+    <div id="listTasks" [ngClass]="{flexing: isflexElem}" >            
         <post
         *ngFor = 'let posts of postList; let i = index'
         [postList] = "posts"
@@ -22,7 +21,7 @@ iv. has an onSubmit method that responds to the submitted event -->
     </div>        
   </form>
 
-  <form name="postBoxShow" *ngIf="main" action="" style="background-color: lightblue; width: 60%; padding:3% 6% 1%" [ngClass]="{componentMargins: isMargin, rounded: isRounded, padded: isPadded, flexing: isflexElem}">
+  <form id="postBoxShow" *ngIf="main" [ngClass]="{componentMargins: isMargin, rounded: isRounded, padded: isPadded, flexing: isflexElem}">
    <postForm (submitted)="onSubmitEvent($event)"></postForm>  
   </form>
   <form *ngIf="!main"></form>

@@ -9,7 +9,7 @@ i. It has one output binding called submitted that emits and event. -->
   <p>
      <textarea name="addTodo" type="text" [(ngModel)]="postInput" style="height: 200px;" [ngClass]="{rounded: isRounded, padded: isPadded, widths: isWidths, flexing: isflexElem}"></textarea>
   </p> 
-  <p style="margin-top: 3%;">
-     <button (click)="submit()" name="submitPostBtn" style="background-color: white; color: black; align-content: center; border: 1px solid; " [ngClass]="{rounded: isRounded, padded: isPadded, widths: isWidths}" >Add Post</button>
+  <p id="addPost">
+     <button (click)="submit()" name="submitPostBtn" style="background-color: white;" [ngClass]="{rounded: isRounded, widths: isWidths}" >Add Post</button>
   </p>
   

@@ -26,6 +26,13 @@ input:focus {
     transition: all 0.2s ease 0s;
    }
  
+#addPost {
+    margin-top: 3%;
+    background-color: white; 
+    color: black; 
+    align-content: center; 
+}
+   
  
  textarea:focus {
     height: 200px;
