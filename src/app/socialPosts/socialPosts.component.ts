@@ -1,10 +1,9 @@
-import { Component, Input } from '@angular/core';
-// import { SubmittedEventArgs } from '../postForm/postForm.component';
+import { Component, Input, Output } from '@angular/core';
+import { Posting } from '../post/post.component';
+
 interface Post {
     itemTitle: string;
     item: string;
-    // completed: boolean;
-    // deleted: boolean;
   }
 
 @Component({
@@ -18,7 +17,7 @@ export class SocialPostsComponent {
     titleInput: string;
     searchPost: string;
     delete: null;
-    @Input() main: boolean;
+    main: boolean = false;
   
     isRounded: boolean = true;
     isPadded: boolean = true; 
@@ -28,20 +27,17 @@ export class SocialPostsComponent {
     isWide: boolean = true;
     isMargin: boolean = true;
 
-    oldpost = {itemTitle: 'Love', item: 'Love is what love does, love is lauren'}
+    posted: Post;
     postList: Post[] = [
-      this.oldpost,
+      {itemTitle: 'Love', item: 'Love is what love does, love is lauren'},
       {itemTitle: 'New', item: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac turpis egestas integer eget aliquet nibh praesent tristique magna. Commodo odio. '}, //completed: false
       {itemTitle: 'old', item: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac turpis egestas integer eget aliquet nibh praesent tristique magna. Commodo odio. '}  //completed: false
     ];
 
 onSubmitEvent(eventArgs){
   console.log("APP COMPONENT: On Submit event fired", eventArgs);
-  this.postList.push(eventArgs);
+  this.postList.unshift(eventArgs);
 } 
-  
-  isCompleted: boolean = false;
-  isDeleted: boolean =  false;
   
   classList: Object = {
   round: this.isRounded,
@@ -53,7 +49,7 @@ onSubmitEvent(eventArgs){
   componentMargins: this.isMargin
   };
   
-  toggleMain = () => {
+  toggleForm = () => {
     this.main = !this.main;
  };
 

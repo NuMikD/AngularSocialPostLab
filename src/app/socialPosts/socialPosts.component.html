@@ -10,38 +10,20 @@ iv. has an onSubmit method that responds to the submitted event -->
   </h1>
   <p [ngClass]="{componentMargins: isMargin, componentWidths: isWide, flexing: isflexElem}">
     <button name="newPostBtn" style="background-color: white; color: black; align-content: center; border: 1px solid; 
-    border-radius: 4px;" [ngClass]="{padded: isPadded, widths: isWidths}" (click)="toggleMain()">New Thought</button>
-  </p>
-       
+    border-radius: 4px;" [ngClass]="{padded: isPadded, widths: isWidths}" (click)="toggleForm()">New Thought</button>
+  </p>       
   <form [ngClass]="{componentMargins: isMargin, rounded: isRounded, padded: isPadded, componentWidths: isWide, flexing: isflexElem}">
-    <div id="listTasks" style="list-style: none; padding: 3% 0 7%;"  [ngClass]="{flexing: isflexElem}" >
-      
-      <div name="allPost"  id="li-Item" *ngFor="let thing of postList; let i = index" [ngClass]="{flexing: isflexElem}" style="display: inline-flex; padding: 1% 0 2%;" >
-        <!-- <post></post> -->
-        <div>
-          <h4 style="padding-left: 4%; margin: 0 auto .2em; ">
-            {{ thing.itemTitle }}
-          </h4>
-        </div>
-        <div [ngClass]="{flexrow: isflexRow}"> 
-          <div name="indivTask" [ngClass]="{flexing: isflexElem}" aria-rowspan='5' style="width: 48em; padding-left: 4%; "> 
-            {{ thing.item }} 
-          </div>
-        <div>
-          <button name="deleteBtn" (click)="delPost(i)" style="background-color: white; border: none;">
-            <i class="glyphicon glyphicon-remove"></i>
-          </button>
-        </div>
-      </div>
-      <p style='width: 37.75em; height: .1em; display: flex; margin: .5em 0 auto 1.3em; border-bottom: 1px solid grey;'></p>
-      </div>
+    <div id="listTasks" style="list-style: none; padding: 3% 0 7%;"  [ngClass]="{flexing: isflexElem}" >            
+        <post
+        *ngFor = 'let posts of postList; let i = index'
+        [postList] = "posts"
+        (delete)="delPost(i)"
+        ></post>
     </div>        
   </form>
 
   <form name="postBoxShow" *ngIf="main" action="" style="background-color: lightblue; width: 60%; padding:3% 6% 1%" [ngClass]="{componentMargins: isMargin, rounded: isRounded, padded: isPadded, flexing: isflexElem}">
-      
-    <postForm (submitted)="onSubmitEvent($event)"></postForm>
-  
+   <postForm (submitted)="onSubmitEvent($event)"></postForm>  
   </form>
   <form *ngIf="!main"></form>
 </body>

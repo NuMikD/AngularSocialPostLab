@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'postForm',
@@ -6,7 +6,8 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./postForm.component.css']
 })
 export class PostFormComponent {
-  @Output() submitted = new EventEmitter();
+  @Input() postList: Posting;
+  @Output() submitted = new EventEmitter<Posting>();
 
 
   title = 'My Thoughts';
@@ -34,7 +35,7 @@ submit = () => {
  }
 
 }
-export interface event {
+export interface Posting {
     itemTitle: string;
     item: string;
 }

@@ -1,10 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-interface Post{
-itemTitle: string;
-item: string;
-}
-
 @Component({
   selector: 'post',
   templateUrl: './post.component.html',
@@ -15,11 +10,9 @@ export class PostComponent {
 postInput: string;
 titleInput: string;
 
-@Input() post: Post;
+@Input() postList: Posting;
 @Output() delete = new EventEmitter<any>();
-// removePost = () => {
-// this.delete.emit(this.post);
-// }
+
 
 isRounded: boolean = true;
 isPadded: boolean = true; 
@@ -42,9 +35,14 @@ classList: Object = {
   componentMargins: this.isMargin
  };
 
-//  delPost = (i) => {
-//     console.log(i)
-//     this.post.splice(i, 1);
-//     }
+ erasePost = () => {
+    console.log()
+    this.delete.emit(this.postList);
+    }
     
 };
+
+export interface Posting {
+  itemTitle: string;
+  item: string;
+  }
