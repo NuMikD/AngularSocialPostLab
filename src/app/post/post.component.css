@@ -1,52 +1,47 @@
 
 
-form {
-    background-color: white;
-    border-radius: 2px;
+#indivThought {
+    width: 94%; 
+    padding-left: 4%;
+    padding-bottom: 2%;
 }
 
-#indivTask {
-    width: 48em; 
-    padding-left: 4%;
-    padding-bottom: 1%;
+#indvPost{    
+    display:flex; 
+    flex-direction:column;
+    width: 93%;
+    margin: auto;
+}
+
+#indvPost:last-child {
+margin-bottom: 4%;
+}
+
+#postAndBtn {
+    display: flex;
+    flex-direction: row;
 }
 
 p {    
-    display: flex; 
-    width: 37.75em;
+    margin: auto;
+    width: 94%;
     height: .1em; 
-    margin: .5em 0 1.3em 1.3em; 
     border-bottom: 1px solid grey;
+    /* background-color: greenyellow; */
+
 }
 
 h4 {
-    padding-left: 4%; 
+    width: 93%;
+    padding: 0 3.5% ; 
     margin: .5em auto .2em;
+    /* background-color: greenyellow; */
 }
 
 button {
-    background-color: white; 
+    background-color: white;
+    width: 6%; 
     border: none;
-}
-
-.componentWidths {
-    margin: auto;
-    width: 80%;
-}
-
-.rounded {
-    border-style: solid;
-    border-radius: 4px;
-    border-color: black;
-    border-width: 1px;
-}
-
-.padded {
-    padding: 1%;
-}
-
-.widths {
-    width: 100%;
 }
 
 .flexing {
@@ -59,6 +54,3 @@ button {
     flex-direction: row;
 }
 
-.componentMargins {
-    margin: 1.5% auto;
-}

@@ -1,11 +1,21 @@
 form {
+    width: 50%; 
+    margin: auto;
     background-color: white;
-    border-radius: 2px;
+    border-radius: 2px solid black;
+}
+
+div {
+    flex-direction: column;
+    padding: 4%;
+    border: 1px solid black;
+    border-radius: 4px;
 }
 
 h1 {
     font-size: 3.5vw; 
-    font-family: cursive;
+    font-family: 'Satisfy', cursive;
+    color: rgb(104, 202, 156);
     text-align: center; 
     background-color: lightgray; 
     margin: none; 
@@ -19,11 +29,12 @@ button {
     align-content: center; 
     border: 1px solid; 
     border-radius: 4px;
+    padding-top: 4px;
 }
 
 .componentWidths {
     margin: auto;
-    width: 80%;
+    width: 50%;
 }
 
 .rounded {
@@ -33,14 +44,9 @@ button {
     border-width: 1px;
 }
 
-#listTask {
-    list-style: none; 
-    padding: 3% 0 7%;
-}
-
-#postBoxShow {
+#formBoxShow {
     background-color: lightblue; 
-    width: 60%; 
+    width: 40%; 
     padding:3% 6% 1%;
 }
 
@@ -48,18 +54,9 @@ button {
     padding: 1%;
 }
 
-.widths {
-    width: 100%;
-}
-
 .flexing {
     display: flex;
     flex-direction: column;
-}
-
-.flexrow {
-    display: flex;
-    flex-direction: row;
 }
 
 .componentMargins {

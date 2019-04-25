@@ -33,18 +33,19 @@ input:focus {
     align-content: center; 
 }
    
- 
- textarea:focus {
+textarea {
     height: 200px;
-    width: 105%;
-    font-size: 125%;
-    outline: none;
-   }
- 
-   textarea {
     -webkit-transition: all 0.2s ease 0s;
     -moz-transition: all 0.2s ease 0s;
     -o-transition: all 0.2s ease 0s;
     transition: all 0.2s ease 0s;
  
-   }
+}
+
+textarea:focus {
+    width: 105%;
+    font-size: 125%;
+    outline: none;
+}
+ 
+  

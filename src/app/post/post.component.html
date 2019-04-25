@@ -1,19 +1,21 @@
 <!-- The post component displays a single post in the list.
 i. It has one input binding called post. -->
 
-<div>
-  <h4>
-    {{ postList.itemTitle }}
-  </h4>
-</div>
-<div [ngClass]="{flexrow: isflexRow}"> 
-  <div id="indivTask" [ngClass]="{flexing: isflexElem}"> 
+<h4>
+  {{ postList.itemTitle }}
+</h4>
+
+<div id="indvPost" name="indivPost"> 
+  <div id="postAndBtn" style="display:flex;">
+  <div id="indivThought" > 
     {{ postList.item }} 
   </div>
     <button name="deleteBtn" (click)="erasePost()">
       <i class="glyphicon glyphicon-remove"></i>
     </button>
+  </div>
+    <p></p>
 </div>
-  <p></p>
+  
 
   

@@ -4,15 +4,14 @@ ii. Its template contains the ngForOf for posts and the “New Post” button.
 iii. The other two components are created inside of its template.
 iv. has an onSubmit method that responds to the submitted event -->
 
-<body [ngClass]="{flexing: isflexElem}" style="margin: auto;">
   <h1>
     {{ title | titlecase }}
   </h1>
   <p [ngClass]="{componentMargins: isMargin, componentWidths: isWide, flexing: isflexElem}">
     <button name="newPostBtn"  [ngClass]="{padded: isPadded, widths: isWidths}" (click)="toggleForm()">New Thought</button>
   </p>       
-  <form [ngClass]="{componentMargins: isMargin, rounded: isRounded, padded: isPadded, componentWidths: isWide, flexing: isflexElem}">
-    <div id="listTasks" [ngClass]="{flexing: isflexElem}" >            
+  <form>
+    <div>            
         <post
         *ngFor = 'let posts of postList; let i = index'
         [postList] = "posts"
@@ -21,8 +20,7 @@ iv. has an onSubmit method that responds to the submitted event -->
     </div>        
   </form>
 
-  <form id="postBoxShow" *ngIf="main" [ngClass]="{componentMargins: isMargin, rounded: isRounded, padded: isPadded, flexing: isflexElem}">
+  <form id="formBoxShow" *ngIf="main" [ngClass]="{componentMargins: isMargin, rounded: isRounded, padded: isPadded, flexing: isflexElem}">
    <postForm (submitted)="onSubmitEvent($event)"></postForm>  
   </form>
   <form *ngIf="!main"></form>
-</body>
