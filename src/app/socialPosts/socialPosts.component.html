@@ -5,12 +5,12 @@ iii. The other two components are created inside of its template.
 iv. has an onSubmit method that responds to the submitted event -->
 
   <h1>
-    {{ title | titlecase }}
+    {{ title }}
   </h1>
   <p [ngClass]="{componentMargins: isMargin, componentWidths: isWide, flexing: isflexElem}">
     <button name="newPostBtn"  [ngClass]="{padded: isPadded, widths: isWidths}" (click)="toggleForm()">New Thought</button>
-  </p>       
-  <form>
+  </p> 
+  <div style="width: 750px; padding:0; margin: 0; background-color: white">      
     <div>            
         <post
         *ngFor = 'let posts of postList; let i = index'
@@ -18,8 +18,7 @@ iv. has an onSubmit method that responds to the submitted event -->
         (delete)="delPost(i)"
         ></post>
     </div>        
-  </form>
-
+</div>
   <form id="formBoxShow" *ngIf="main" [ngClass]="{componentMargins: isMargin, rounded: isRounded, padded: isPadded, flexing: isflexElem}">
    <postForm (submitted)="onSubmitEvent($event)"></postForm>  
   </form>
